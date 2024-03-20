@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>Lost-And-Found</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<description>Oracle</description>
+	<resource-ref>
+		<description>Oracle DB Connection Pool</description>
+		<res-ref-name>jdbc/LOST_AND_FOUND</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+
+	<filter>
+		<filter-name>securityfilter</filter-name>
+		<filter-class>filter.PageRedirectSecurityFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>securityfilter</filter-name>
+		<url-pattern>/jsp/*</url-pattern>
+	</filter-mapping>
+
+
+	<filter>
+		<filter-name>SessionTimeoutFilter</filter-name>
+		<filter-class>filter.SessionTimeoutFilter</filter-class>
+		<init-param>
+			<param-name>timeout</param-name>
+			<param-value>1</param-value> <!-- Время сессии в минутах -->
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>SessionTimeoutFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>rolesecurityfilter</filter-name>
+		<filter-class>filter.ServletSecurityFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>rolesecurityfilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+		<filter>
+		<filter-name>usersfilter</filter-name>
+		<filter-class>filter.CheckStatusFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>usersfilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+
+	<!-- <filter> -->
+	<!-- <filter-name>AuthenticationFilter</filter-name> -->
+	<!-- <filter-class>filter.AuthenticationFilter</filter-class> --><!-- Замените на ваш пакет и имя класса -->
+	<!-- </filter> -->
+	<!-- <filter-mapping> -->
+	<!-- <filter-name>AuthenticationFilter</filter-name> -->
+	<!-- <url-pattern>/*</url-pattern> -->
+	<!-- </filter-mapping> -->
+	<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+	<servlet>
+		<servlet-name>Root</servlet-name>
+		<servlet-class>controller.FrontController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Root</servlet-name>
+		<url-pattern></url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Main</servlet-name>
+		<servlet-class>controller.FrontController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Main</servlet-name>
+		<url-pattern>/home</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Finds</servlet-name>
+		<servlet-class>controller.FrontController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Finds</servlet-name>
+		<url-pattern>/findings</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>UserFinds</servlet-name>
+		<servlet-class>controller.FrontController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserFinds</servlet-name>
+		<url-pattern>/myfindings</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Profile</servlet-name>
+		<servlet-class>controller.FrontController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Profile</servlet-name>
+		<url-pattern>/myprofile</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AboutProject</servlet-name>
+		<servlet-class>controller.FrontController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AboutProject</servlet-name>
+		<url-pattern>/aboutproject</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>MyTasks</servlet-name>
+		<servlet-class>controller.FrontController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyTasks</servlet-name>
+		<url-pattern>/mytasks</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Users</servlet-name>
+		<servlet-class>controller.FrontController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Users</servlet-name>
+		<url-pattern>/users</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AddUser</servlet-name>
+		<servlet-class>controller.FrontController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AddUser</servlet-name>
+		<url-pattern>/users/adduser</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ChangeUser</servlet-name>
+		<servlet-class>controller.FrontController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ChangeUser</servlet-name>
+		<url-pattern>/users/changeuser</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AddFinding</servlet-name>
+		<servlet-class>controller.FrontController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AddFinding</servlet-name>
+		<url-pattern>/findings/addfinding</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ChangeFinding</servlet-name>
+		<servlet-class>controller.FrontController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ChangeFinding</servlet-name>
+		<url-pattern>/findings/changefinding</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>FinalQuestions</servlet-name>
+		<servlet-class>controller.FrontController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>FinalQuestions</servlet-name>
+		<url-pattern>/findings/finalquestions</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>AddFinalQuestions</servlet-name>
+		<servlet-class>controller.FrontController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AddFinalQuestions</servlet-name>
+		<url-pattern>/findings/finalquestions/addfinalquestion</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ChangeFinalQuestion</servlet-name>
+		<servlet-class>controller.FrontController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ChangeFinalQuestion</servlet-name>
+		<url-pattern>/findings/finalquestions/changefinalquestion</url-pattern>
+	</servlet-mapping>
+
+
+
+
+
+	<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+	<servlet>
+		<servlet-name>JSPerror</servlet-name>
+		<jsp-file>/jsp/error.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>JSPerror</servlet-name>
+		<url-pattern>/error</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>TimeOut</servlet-name>
+		<jsp-file>/jsp/timeout.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TimeOut</servlet-name>
+		<url-pattern>/timeout</url-pattern>
+	</servlet-mapping>
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/jsp/error.jsp</location>
+	</error-page>
+
+	<error-page>
+		<exception-type>java.lang.RuntimeException</exception-type>
+		<location>/jsp/error.jsp</location>
+	</error-page>
+
+</web-app>

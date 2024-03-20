@@ -1,0 +1,657 @@
+@charset "UTF-8";
+
+body {
+	background-color: #333;
+	font-family: century gothic;
+	font-size: 15px;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 0;
+	margin: 0;
+}
+
+
+
+/*-------------------------------------------- Стили header -------------------------------------------------*/
+header {
+	position: fixed;
+}
+
+table#header {
+	text-align: center;
+	border-radius: 51px;
+	width: 70%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 1%;	
+}
+
+table#header button {
+	color: #fff;
+	text-align: center;
+	font-size: 20px;
+	font-style: normal;
+	border: none;
+	background-color: rgb(0,0,0,0);
+	transition: transform 0.5s;
+	height: 50px;
+
+}
+
+table#header button:hover {
+	background: radial-gradient(50.01% 50% at 50% 50%, #FFA800 0%, rgba(255, 168, 0,
+		0.00) 100%);
+	transform: scale(1.3);
+}
+
+/*-------------------------------------------- Стили users -------------------------------------------------*/
+
+table#users {
+	width: 50%;
+	border: 4px solid rgba(0, 0, 0, 0);
+	padding: 10px;
+	border-radius: 30px;
+	background-color: #fff;
+	margin-bottom: 20px;
+}
+
+table#users:hover {
+	border: 4px solid rgba(255, 168, 0, 1);
+}
+
+td#itemusers {
+	color: #0085FF;
+	font-size: 15px;
+	font-style: normal;
+}
+
+td#role {
+	color: #0085FF;
+	font-size: 15px;
+	font-style: normal;
+}
+
+td#e-mail {
+	width: 300px;
+	padding: 10px;
+	color: #1E1E1E;
+	font-size: 30px;
+	font-style: normal;
+	font-weight: 700;
+}
+
+td#login {
+	padding: 10px 100px 10px 100px;
+	color: #1E1E1E;
+	font-size: 20px;
+	font-style: normal;
+	max-width: 500px;
+}
+
+td#password {
+	padding: 20px 10px 0px;
+	color: #1E1E1E;
+	font-size: 15px;
+	font-style: normal;
+}
+
+td {
+	padding: 0px 10px 5px;
+	color: #333;
+	font-size: 15px;
+	font-style: normal;
+}
+
+td#category {
+	padding: 0px 10px 5px;
+	color: #333;
+	font-size: 15px;
+	font-style: normal;
+}
+
+th {
+	padding: 0px 10px 5px;
+	color: #333;
+	font-size: 15px;
+	font-style: normal;
+}
+
+
+button#activity {
+	background-color: rgba(0, 0, 0, 0.0);
+	transition: transform 0.5s;
+	border: 1px solid rgba(0, 0, 0, 0.0);
+}
+
+button#openModalBlockUser {
+	width: 150px;
+	height: 40px;
+	border: none;
+	border-radius: 50px;
+	background: #0085FF;
+	color: #FFF;
+	font-size: 15px;
+}
+
+button#openModalBlockUser:hover {
+	background: #FFA800;
+}
+
+/*-------------------------------------------- Стили findings -------------------------------------------------*/
+
+table#finding {
+	border: none;
+	border-radius: 30px;
+	background-color: #fff;
+	margin-bottom: 30px;
+	width: 80%;
+}
+
+td#category {
+	padding: 30px 40px 0px;
+	color: #0085FF;
+	font-size: 15px;
+	font-style: normal;
+}
+
+td#name {
+	max-width: 300px;
+	width: 300px;
+	padding: 0px 40px 15px;
+	color: #1E1E1E;
+	font-size: 30px;
+	font-style: normal;
+	font-weight: 700;
+}
+
+td#description {
+	padding: 15px 0px 15px;
+	color: #1E1E1E;
+	font-size: 20px;
+	font-style: normal;
+	max-width: 500px;
+	width: 500px;
+}
+
+td#date {
+	max-width: 300px;
+	padding: 15px 40px 15px;
+	color: #1E1E1E;
+	font-size: 15px;
+	font-style: normal;
+}
+
+td#place{
+	padding: 0px 40px 30px;
+	color: #333;
+	font-size: 15px;
+	font-style: normal;
+}
+
+button#openModalDeleteFinding, button#edit, button#finalquestion {
+	width: 100px;
+	height: 60px;
+	border: none;
+	border-radius: 50px;
+	background: #0085FF;
+	color: #FFF;
+	font-size: 15px;
+	transition: transform 0.5s;
+	text-align: center;
+	margin-right: 10px;
+}
+
+button#finalquestion {
+	width: 130px;
+}
+
+
+button#openModalDeleteFinding:hover, button#edit:hover, button#finalquestion:hover {
+	background: #FFA800;
+	transform: scale(1.1);
+}
+
+/*-------------------------------------------- Стили окна changefinding -------------------------------------------------*/
+
+#titleText {
+	margin-top: 4%;
+}
+
+#changefindingForm label {
+	color: #0085FF;
+	font-size: 20px;	
+	margin: 5px;
+	text-align: left; 
+}
+
+#changefindingForm {
+	width: 500px;
+	padding: 20px;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	border-radius: 10px; 
+	background-color: #fff;
+}
+
+#changefindingForm input[type="text"], #changefindingForm input[type="date"],
+#changefindingForm select {
+	font-family: century gothic;
+	margin-left: 1%;
+	margin-bottom: 10px;
+	width: 90%;
+	padding: 10px;
+	border: 1px solid #333;
+	border-radius: 5px;
+	color: #333;
+	font-size: 15px;
+	background-color: #fff;
+}
+
+button#saveFindingChanges {
+	margin-top: 15px; 
+	margin-left: 25%;
+	width: 250px;
+	height: 60px;
+	border: none;
+	border-radius: 50px;
+	background: #0085FF;
+	color: #FFF;
+	font-size: 20px;
+	font-style: normal;
+	transition: transform 0.5s;
+	text-align: center;
+}
+
+button#saveFindingChanges:hover {
+	background: #FFA800;
+	transform: scale(1.1);
+}
+
+/* -------------------------------------------- стили finalquestion ------------------------------------------------ */
+table#finalquestion {	
+	padding: 10px;
+	margin: auto; 
+	margin-bottom: 30px;
+	border-radius: 30px;
+	background-color: #fff;
+	width: 50%; 
+	table-layout: fixed;
+	word-wrap: break-word;
+}
+
+table#finalquestion td {
+	padding: 10px;
+	text-align: center;
+}
+
+table#finalquestion td#question {
+	text-align: center; /* Центрирование текста по горизонтали */
+	font-weight: bold;
+}
+
+table#finalquestion td#rightanswer {
+	color: green; /* Зеленый цвет текста */
+	transition: color 0.3s, background 0.3s; /* Анимация цвета и фона */
+	background-image: radial-gradient(rgba(0, 128, 0, 0.3), transparent);
+	/* Радиальный градиент с центральной точкой */
+}
+
+table#finalquestion td#rightanswer:hover {
+	color: black; /* Черный цвет текста при наведении */
+	background: green; /* Зеленый фон при наведении */
+}
+
+table#finalquestion td#alternativeanswer {
+	color: red; /* Красный цвет текста */
+	transition: color 0.3s, background 0.3s; /* Анимация цвета и фона */
+	background-image: radial-gradient(rgba(255, 0, 0, 0.3), transparent);
+	/* Радиальный градиент с центральной точкой */
+}
+
+table#finalquestion td#alternativeanswer:hover {
+	color: black; /* Черный цвет текста при наведении */
+	background: red; /* Красный фон при наведении */
+}
+
+button#changeFinalQuestion {
+	margin-left: 200px;
+}
+
+button#changeFinalQuestion, button#openModalDeleteFinalQuestion {
+	width: 150px;
+	height: 50px;
+	border: none;
+	border-radius: 50px;
+	background: #0085FF;
+	color: #FFF;
+	font-size: 15px;
+	text-align: center;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+button#changeFinalQuestion:hover, button#openModalDeleteFinalQuestion:hover {
+	background: #FFA800;
+}
+
+/* ------------------------------ стили chancge changefinalquestion -------------------------------------------- */
+
+#titleChangeFinalQuestionText {
+	margin-top: 7%;
+}
+
+#changeFinalQuestionForm label {
+	color: #0085FF;
+	font-size: 20px;	
+	margin: 5px;
+	text-align: left; 
+}
+
+#changeFinalQuestionForm {
+	width: 500px;
+	padding: 20px;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	border-radius: 10px; 
+	background-color: #fff;
+}
+
+#changeFinalQuestionForm input[type="text"] {
+	font-family: century gothic;
+	margin-left: 1%;
+	margin-bottom: 10px;
+	width: 90%;
+	padding: 10px;
+	border: 1px solid #333;
+	border-radius: 5px;
+	color: #333;
+	font-size: 15px;
+	background-color: #fff;
+}
+
+button#saveFinalQuestionChanges {
+	margin-top: 15px; 
+	margin-left: 25%;
+	width: 250px;
+	height: 60px;
+	border: none;
+	border-radius: 50px;
+	background: #0085FF;
+	color: #FFF;
+	font-size: 20px;
+	font-style: normal;
+	transition: transform 0.5s;
+	text-align: center;
+}
+
+button#saveFinalQuestionChanges:hover {
+	background: #FFA800;
+	transform: scale(1.1);
+}
+
+
+
+/*----------------------------------------- стили home ---------------------------------------------------------*/
+
+@keyframes color-change {
+  from {
+    background-color: #F498AD;
+  }
+  50% {
+    background-color: #7F6EDB;
+  }
+  to {
+    background-color: #2E9AFF;
+  }
+}
+
+h1#home {
+	font-size: 50px;
+	display: flex;
+	justify-content: center;
+	margin-top: -10%;
+	color: #fff;
+	text-align: center;
+	filter: blur(0px);
+}
+
+.circle {
+	margin-top: 10%;
+	width: 361px;
+	height: 142px;
+	flex-shrink: 0;
+	border-radius: 561px;
+	background: #0085FF;
+	filter: blur(70px);
+	animation: color-change 5s alternate linear infinite;
+}
+
+/* ------------------------------------------- Стили окна myprofile --------------------------------------------------*/
+h1#profile {
+	padding: 15px;
+	font-size: 30px;
+	color: #333;
+	text-align: center;
+	border-radius: 30px;
+	background: #FFF;
+	margin-top: 2%;
+}
+
+table#profile {
+	text-align: center;
+}
+
+
+label#profileTitle {
+	width: 200px; 
+    display: inline-block;
+	margin: 5px;
+	padding: 20px;
+	font-size: 30px;
+	color: #fff;
+	text-align: center;
+	border-radius: 30px;
+	background: #0085FF;
+}
+
+input[type="text"]{
+	width: 500px; 
+    display: inline-block;
+	margin: 5px;
+	padding: 20px;
+	font-size: 30px;
+	color: #fff;
+	text-align: left;
+	border-radius: 30px;
+	border: 2px solid #333;
+	background: #333;
+}
+
+input[type="text"]:hover {
+	border: 2px solid #fff;
+}
+
+input[type="text"]:focus {
+	border: 2px solid #333;
+	background: #fff;
+	color: #333;
+}
+
+button#saveProfileData {
+	text-align: center;
+	width: 370px;
+	height: 70px;
+	border: none;
+	border-radius: 50px;
+	font-size: 25px;
+	font-style: normal;
+	text-align: center;
+	margin: 10px;
+	background: #FFA800;
+	color: #fff;
+}
+
+button#saveProfileData:hover {
+	background: #52ff33;
+}
+
+p#saveMessage {
+	font-size: 25px;
+	color: #52ff33;
+	animation: slideUp 1s ease-in-out;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --------------------------------------------------- стили about_project ----------------------------------- */
+
+.mytasks {
+	font-size: 24px;
+	color: #fff;
+	text-align: justify;
+	margin: 5%;
+}
+
+.adduser {
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 20px; /* Внутренний отступ */
+	color: #333;
+}
+
+
+
+#addUserForm label {
+	display: block;
+	margin-bottom: 5px;
+	text-align: left; /* Выравнивание текста внутри label по левому краю */
+}
+
+#addUserForm {
+	width: 500px;
+	padding: 20px;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	border-radius: 10px; /* Задаем радиус скругления углов */
+	background-color: #fff;
+}
+
+#addUserForm input[type="text"], #addUserForm input[type="password"],
+	#addUserForm input[type="email"] {
+	width: 90%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+#addUserForm select {
+	width: 90%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+ul {
+	list-style-type: square;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* Выравнивание по горизонтали (центрирование) */
+	justify-content: center;
+	/* Выравнивание по вертикали (центрирование) */
+}
+
+li:hover {
+	background: radial-gradient(50.01% 50% at 50% 50%, #FFA800 0%, rgba(255, 168, 0,
+		0.00) 80%);
+	transform: scale(0.9);
+	cursor: pointer;
+}
+
+footer {
+	position: fixed;
+	bottom: 20px;
+	width: 30%;
+	font-size: 15px;
+	color: #fff; /* Цвет текста внутри футера */
+	padding: 5px; /* Внутренние отступы */
+	text-align: center; /* Выравнивание текста по центру */
+	border-radius: 50px;
+	border: 1px solid #FFF;
+}
+
+/* ------------------------------------------- Стили модального окна  --------------------------------------------------*/
+.modal {
+	display: none; /* Скрыто по умолчанию */
+	position: fixed; /* Оставаться на месте */
+	z-index: 1; /* Сидеть на вершине */
+	left: 0;
+	top: 0;
+	width: 100%; /* Полная ширина */
+	height: 100%; /* Полная высота */
+	background-color: rgba(0, 0, 0, 0.4); /* Черный с непрозрачностью */
+}
+
+.modal-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 50px;
+	border: 1px solid #FFF;
+	background-color: #333;
+	padding: 10px;
+	margin: 300px;
+	margin-top: 15%;
+}
+
+span#deleteFindingText, span#deleteFinalQuestionText {
+	font-weight: bold;
+	border-bottom: 2px solid red; /* Замените "red" на нужный вам цвет */
+}
+
+span#statusUser, span#nameUser {
+	font-weight: bold;
+	border-bottom: 2px solid #0085FF; /* Замените "red" на нужный вам цвет */
+}
+
+button#exit, button#deleteFinding, button#blockUser, button#deleteFinalQuestion {
+	width: 100px;
+	height: 50px;
+	border: none;
+	border-radius: 50px;
+	font-size: 17px;
+	text-align: center;
+	background: #fff;
+	color: #333;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+button#exit:hover, button#blockUser:hover {
+	color: #fff;
+	background: #0085FF;
+}
+
+button#deleteFinding:hover, button#deleteFinalQuestion:hover {
+	color: #fff;
+	background: red;
+}
+
+
