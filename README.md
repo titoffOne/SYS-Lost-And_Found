@@ -11,3 +11,6 @@
 Подробнее о проекте:
 https://drive.google.com/drive/folders/14Vu8Up3cDURodJY2jMwWNZ7QZYljyw8I?usp=sharing
 
+![image](https://github.com/user-attachments/assets/24c61a7f-ef05-4d51-8296-0c48a26997af)
+
+
